@@ -1,0 +1,23 @@
+{
+  "name": "node-deploy",
+  "version": "1.0.0",
+  "description": "前端独立发布",
+  "main": "index.js",
+  "dependencies": {
+    "mongoose": "^4.8.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IFWEB/node-deploy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IFWEB/node-deploy/issues"
+  },
+  "homepage": "https://github.com/IFWEB/node-deploy#readme"
+}
