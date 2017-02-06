@@ -1,23 +1,25 @@
 {
-  "name": "node-deploy",
+  "name": "default",
   "version": "1.0.0",
-  "description": "前端独立发布",
+  "description": "Default template for fis scaffold",
   "main": "index.js",
-  "dependencies": {
-    "mongoose": "^4.8.1"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IFWEB/node-deploy.git"
+    "url": "https://github.com/fis-scaffold/default.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "fis",
+    "scaffold"
+  ],
+  "author": "fex",
+  "license": "BSD",
   "bugs": {
-    "url": "https://github.com/IFWEB/node-deploy/issues"
+    "url": "https://github.com/fis-scaffold/default/issues"
   },
-  "homepage": "https://github.com/IFWEB/node-deploy#readme"
+  "homepage": "https://github.com/fis-scaffold/default",
+  "dependencies": {
+  }
 }
