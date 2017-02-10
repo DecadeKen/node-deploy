@@ -1,7 +1,7 @@
 /*
  * deploy 模块入口
  */
-var db = require( './lib/storage/initdb' );//db.systemInfo是系统配置模型
+//var db = require( './lib/storage/initdb' );//db.systemInfo是系统配置模型
 
 // //测试systemSetting.js
 // var systemSetting = require('./lib/systemSetting')(db);
@@ -31,11 +31,11 @@ var db = require( './lib/storage/initdb' );//db.systemInfo是系统配置模型
 // 'use strict';
 // console.log(process.platform);
 
-var svnCheckout = require('./lib/svnCheckout')(db);
-svnCheckout.checkout(1,function(dirFileName, log){
-    console.log( "dirFileName = " + dirFileName );
-    console.log( "log = " + log );
-});
+// var svnCheckout = require('./lib/svnCheckout')(db);
+// svnCheckout.checkout(1,function(dirFileName, log){
+//     console.log( "dirFileName = " + dirFileName );
+//     console.log( "log = " + log );
+// });
 
 // var exec = require( 'child_process' ).exec;
 // exec( 'cd workspace/nfd-server02svnp2pbranchesrcrw20170112staticsrcmainwebapppc && fis3 imweb dev',  function( error, stdout, stderr ) {
@@ -45,6 +45,18 @@ svnCheckout.checkout(1,function(dirFileName, log){
 // 	}
 // 	console.log('stdout: ' + stdout + '\n stderr: ' + stderr);
 // } );
+
+var express = require('express');
+var app = express();
+require('./lib/router.js')(app, {
+	pageStatic: __dirname,//页面资源文件夹
+	resourceStatic: __dirname//静态资源文件夹
+});
+
+
+app.listen(5000, function(){
+	console.log('listen 5000');
+});
 
 // module.exports = deploy;
 
