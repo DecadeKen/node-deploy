@@ -1,0 +1,39 @@
+$border-gray: #ddd;
+.section-main {
+    border: 1px solid $border-gray;
+    margin: 50px auto;
+    border-radius: 4px 4px 0 0;
+}
+
+.aside {
+    border-right: 1px solid $border-gray;
+    padding: 20px;
+}
+
+.main {
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    margin-left: -1px;
+}
+
+.index-table-btn {
+    padding: 6px 20px;
+}
+
+.index-table {
+    text-align: center;
+    tbody {
+        tr {
+            td {
+                line-height: 35px;
+            }
+        }
+    }
+    th {
+    	text-align: center;
+    }
+}
+
+.index-table-operate {
+    width: 270px;
+}
