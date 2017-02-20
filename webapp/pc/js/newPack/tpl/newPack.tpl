@@ -10,7 +10,7 @@
 
 <div class="newPack-input-group">
 	<label for="basic-url">工作目录</label>
-	<input class="form-control" type="text" placeholder="请输入工作目录地址">
+	<input class="form-control" type="text" placeholder="请输入工作目录地址，如/Users/ken/workSpace/p2p">
 </div>
 
 <div class="newPack-input-group">

@@ -25,6 +25,9 @@ fis.match('*.js', {
 })
 .match('server.js', {
     isMod: false
+})
+.match('common.js', {
+    isMod: false
 });
 
 

@@ -1,0 +1,1 @@
+require('/commom/base/js/date.js');
