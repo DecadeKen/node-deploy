@@ -1,16 +1,16 @@
 
 <ul class="nav nav-pills nav-stacked aside-nav">
     <li data-tab="index">
-        <a href="#index" >首页</a>
+        <a href="#tab=index" >首页</a>
     </li>
     <li data-tab="systemConfig">
-        <a href="#systemConfig" >系统配置</a>
+        <a href="#tab=systemConfig" >系统配置</a>
     </li>
     <li data-tab="packList">
-        <a href="#packList" >打包列表</a>
+        <a href="#tab=packList" >打包列表</a>
     </li>
     <li data-tab="newPack">
-        <a href="#newPack" >新建打包</a>
+        <a href="#tab=newPack" >新建打包</a>
     </li>
 </ul>
 

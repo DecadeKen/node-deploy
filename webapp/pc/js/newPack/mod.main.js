@@ -3,14 +3,71 @@ var $cont,
 
 var lock = false;
 
+var DB = {
+
+    newPackInfo: {
+        url: '/index/newPackInfo.htm',
+        type: 'GET'
+    }
+};
+
+var serversConfig = require('/config.js');
+
+var newPackOpt = {};
+
+
 function renderHtml() {
     $cont.find('.js-main-content').hide();
-    $cont.find('.js-main-newPack').show().html(tpl_newPack());
+    $cont.find('.js-main-newPack').show().html(tpl_newPack({ serversConfig: serversConfig.servers }));
 }
 
 function bindEvent() {
-    if (lock) return;
-    lock = !lock;
+    // if (lock) return;
+    // lock = !lock;
+
+    $cont.find('.newPack-save-btn').on('click', function() {
+        if (checkSaveBtn()) {
+            SendNewPackInfoData(null, function() {
+                alert('项目新建成功');
+            });
+        } else {
+            alert('请输入完整信息');
+        }
+
+
+    });
+}
+
+function SendNewPackInfoData(err, callback) {
+    if (err) return;
+    $.ajax({
+        url: DB.newPackInfo.url,
+        type: DB.newPackInfo.type,
+        dataType: 'json',
+        data: newPackOpt,
+        success: function(data) {
+            callback && callback(data);
+        }
+    });
+}
+
+function checkSaveBtn() {
+    var isSave = true;
+    newPackOpt = {
+        name: $cont.find('[name=projectName]').val(),
+        svnUrl: $cont.find('[name=svnUrl]').val(),
+        workSpace: $cont.find('[name=workSpace]').val(),
+        fisMedia: $cont.find('[name=fisMedia]').val(),
+        serverId: $cont.find('[name=serverUrl]').val()
+    };
+
+    for (index in newPackOpt) {
+        if (!newPackOpt[index]) {
+            isSave = false;
+        }
+
+    }
+    return isSave;
 }
 
 

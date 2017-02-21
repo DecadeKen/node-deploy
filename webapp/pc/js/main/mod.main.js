@@ -3,6 +3,8 @@ var $cont = $('.js-deploy-container'),
     tpl_container = require('./tpl/container.tpl'),
     tpl_main = require('./tpl/main.tpl');
 
+require('/common/common.js');
+
 var lock = false,
     hash = '';
 
@@ -16,7 +18,7 @@ function bindEvent() {
 }
 
 function initHash() {
-    hash = window.location.hash.replace(/^#/, '') || 'index';
+    hash = $.bom.getHash('tab') || '';
     $cont.find('.js-deploy-aside').find('[data-tab]').removeClass('active');
     $cont.find('.js-deploy-aside').find('[data-tab=' + hash + ' ]').addClass('active');
 
@@ -35,11 +37,11 @@ function initMod() {
         //         mod.init({ cont: $cont.find('.js-deploy-main') });
         //     });
         //     break;
-        // case 'packList':
-        //     require.async('/js/packList/mod.main.js', function(mod) {
-        //         mod.init({ cont: $cont.find('.js-deploy-main') });
-        //     });
-        //     break;
+        case 'packList':
+            require.async('/js/packList/mod.main.js', function(mod) {
+                mod.init({ cont: $cont.find('.js-deploy-main') });
+            });
+            break;
         case 'newPack':
             require.async('/js/newPack/mod.main.js', function(mod) {
                 mod.init({ cont: $cont.find('.js-deploy-main') });

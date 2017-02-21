@@ -1,16 +1,17 @@
 var $cont,
-	tpl_index = require('./tpl/index.tpl');
+	tpl_packList = require('./tpl/packList.tpl');
 
 var lock = false;
 
 function renderHtml(){
 	$cont.find('.js-main-content').hide();
-	$cont.find('.js-main-index').show().html(tpl_index());
+	$cont.find('.js-main-packList').show().html(tpl_packList());
 }
 
 function bindEvent(){
-	if (lock) return;
-	lock = !lock;
+	// if (lock) return;
+	// lock = !lock;
+	
 
 }
 

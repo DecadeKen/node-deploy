@@ -1,42 +1,48 @@
 var $cont,
-	tpl_index = require('./tpl/index.tpl');
+    tpl_index = require('./tpl/index.tpl');
 
 var lock = false;
-console.log(new Date().Format);
 var DB = {
-	// indexBuild: {	
-	// 	url: '/index/build.htm',
-	// 	type: 'GET'
-	// },
-	ProjectInfo: {
-		url: 'index/ProjectInfo.htm',
-		type: 'GET'
-	}
+    ProjectInfo: {
+        url: 'index/ProjectInfo.htm',
+        type: 'GET'
+    },
+    build: {
+    	url: '/index/build.htm',
+    	type: 'GET'
+    }
 };
+var buildOpt= {};
 
-function renderHtml(data){
-	$cont.find('.js-main-content').hide();
-	$cont.find('.js-main-index').show().html(tpl_index({data: data}));
+
+require('/common/base/js/date.js');
+
+function renderHtml(data) {
+    $cont.find('.js-main-content').hide();
+    $cont.find('.js-main-index').show().html(tpl_index(data));
 }
 
-function bindEvent(){
-	if (lock) return;
-	lock = !lock;
+function bindEvent() {
+    // if (lock) return;
+    // lock = !lock;
 
-	$cont.find('.js-btn-build').on('click', function(){
-		getIndexBuildData(null, function(data) {
-			console.log(data);
-		});
-	});
+    $cont.find('.js-btn-build').on('click', function() {
+    	buildOpt.id = $(this).parent().attr('data-id');
+    	buildOpt.number = $(this).parent().attr('data-number');
+        startBuild(null, function(data) {
+            console.log(data);
+        });
+    });
 
 }
 
-function getIndexBuildData(err, callback) {
-	if (err) return;
-	$.ajax({
-        url: DB.indexBuild.url,
-        type: DB.indexBuild.type,
+function startBuild(err, callback) {
+    if (err) return;
+    $.ajax({
+        url: DB.build.url,
+        type: DB.build.type,
         dataType: 'json',
+        data: buildOpt,
         success: function(data) {
             callback && callback(data);
         }
@@ -44,8 +50,8 @@ function getIndexBuildData(err, callback) {
 }
 
 function getProjectInfoData(err, callback) {
-	if (err) return;
-	$.ajax({
+    if (err) return;
+    $.ajax({
         url: DB.ProjectInfo.url,
         type: DB.ProjectInfo.type,
         dataType: 'json',
@@ -56,16 +62,15 @@ function getProjectInfoData(err, callback) {
 }
 
 function init(opt) {
-	$cont = opt.cont;
-	getProjectInfoData(null, function(data){
-		console.log(data)
-		renderHtml(data);
-	});
-	
-    bindEvent();
-    // console.log((new Date()).Format("yyyy年MM月d日 h时m分s秒"))
+    $cont = opt.cont;
+    getProjectInfoData(null, function(data) {
+        renderHtml(data);
+        bindEvent();
+    });
+
+    
 }
 
 return {
-	init: init
+    init: init
 };
