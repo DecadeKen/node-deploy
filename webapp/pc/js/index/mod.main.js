@@ -30,7 +30,7 @@ function bindEvent() {
     	buildOpt.id = $(this).parent().attr('data-id');
     	buildOpt.number = $(this).parent().attr('data-number');
         startBuild(null, function(data) {
-            console.log(data);
+            // console.log(data);
         });
     });
 

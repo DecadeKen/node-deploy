@@ -18,14 +18,14 @@ var newPackOpt = {};
 
 function renderHtml() {
     $cont.find('.js-main-content').hide();
-    $cont.find('.js-main-newPack').show().html(tpl_newPack({ serversConfig: serversConfig.servers }));
+    $cont.find('.js-main-newPack').show().html(tpl_newPack(serversConfig));
 }
 
 function bindEvent() {
     // if (lock) return;
     // lock = !lock;
 
-    $cont.find('.newPack-save-btn').on('click', function() {
+    $cont.find('.newPack-save-btn').on('click', 'button', function() {
         if (checkSaveBtn()) {
             SendNewPackInfoData(null, function() {
                 alert('项目新建成功');
@@ -56,10 +56,12 @@ function checkSaveBtn() {
     newPackOpt = {
         name: $cont.find('[name=projectName]').val(),
         svnUrl: $cont.find('[name=svnUrl]').val(),
-        workSpace: $cont.find('[name=workSpace]').val(),
+        fisPath: $cont.find('[name=fisPath]').val(),
         fisMedia: $cont.find('[name=fisMedia]').val(),
         serverId: $cont.find('[name=serverUrl]').val()
     };
+
+    console.log(newPackOpt)
 
     for (index in newPackOpt) {
         if (!newPackOpt[index]) {
