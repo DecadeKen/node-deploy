@@ -5,14 +5,14 @@ var config = {
         "username": 'root',
         "password": 'nongfadai',
         "uploadOpt": {
-            "localDir": '/Users/ken/workSpace/p2p/localtest/',
+            "localDir": '/root/node_deploy/',
             "remoteDir": '/root/test/',
-            "backupDir": '/Users/ken/workSpace/p2p/backup'
+            "backupDir": '/root/node_deploy/backup'
         }
     }],
     "svnUrl": [
         'https://nfd-server02/svn/p2p/preRelease',
-        'ttps://nfd-server02/svn/activity/preRelease'
+        'https://nfd-server02/svn/activity/preRelease'
     ]
 };
 
