@@ -11,8 +11,8 @@ var config = {
         }
     }],
     "svnUrl": [
-        'https://nfd-server02/svn/p2p/preRelease',
-        'https://nfd-server02/svn/activity/preRelease'
+        'https://nfd-server02/svn/p2p/preRelease/',
+        'https://nfd-server02/svn/activity/preRelease/'
     ]
 };
 
