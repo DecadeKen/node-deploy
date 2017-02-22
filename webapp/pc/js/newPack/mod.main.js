@@ -11,14 +11,14 @@ var DB = {
     }
 };
 
-var serversConfig = require('/config.js');
+var config = require('/config.js');
 
 var newPackOpt = {};
 
 
 function renderHtml() {
     $cont.find('.js-main-content').hide();
-    $cont.find('.js-main-newPack').show().html(tpl_newPack(serversConfig));
+    $cont.find('.js-main-newPack').show().html(tpl_newPack(config));
 }
 
 function bindEvent() {
@@ -55,13 +55,10 @@ function checkSaveBtn() {
     var isSave = true;
     newPackOpt = {
         name: $cont.find('[name=projectName]').val(),
-        svnUrl: $cont.find('[name=svnUrl]').val(),
-        fisPath: $cont.find('[name=fisPath]').val(),
+        svnUrl: config.svnUrl[$cont.find('[name=svnUrl]').val()],
         fisMedia: $cont.find('[name=fisMedia]').val(),
-        serverId: $cont.find('[name=serverUrl]').val()
+        serverId: $cont.find('[name=serverId]').val()
     };
-
-    console.log(newPackOpt)
 
     for (index in newPackOpt) {
         if (!newPackOpt[index]) {
