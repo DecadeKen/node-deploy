@@ -24,8 +24,12 @@
             userName: 'ken',
             password: '123456'
         },
-        success: function(){
-            console.log('登录成功');
+        success: function(data){
+            if(!data.code){
+                console.log('登录成功');
+            }else{
+                console.log('登录失败');
+            }
         }
     })
     require('./js/main/mod.main.js').init();
