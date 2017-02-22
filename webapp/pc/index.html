@@ -17,6 +17,17 @@
     <script src="./common/dep/jquery-1.11.2.min.js"></script>
     <script src="./common/dep/bootstrap.min.js"></script>
     <script type="text/javascript">
+    $.ajax({
+        url: '/login.htm',
+        type: 'post',
+        data: {
+            userName: 'chua',
+            password: '123456'
+        },
+        success: function(){
+            console.log('登录成功');
+        }
+    })
     require('./js/main/mod.main.js').init();
     </script>
 </body>
