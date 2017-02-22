@@ -10,22 +10,15 @@
         </tr>
     </thead>
     <tbody>
-    <tr>
-        <td>lijianxiang</td>
-        <td>日常分支 #1</td>
-        <td>2017-02-20</td>
-        <td>sucess</td>
-        <td>50s</td>
-        <td><button type="button" class="btn btn-info index-table-btn">查看</button></td>
-    </tr>
-    <tr>
-        <td>lijianxiang</td>
-        <td>日常分支 #2</td>
-        <td>2017-02-20</td>
-        <td>sucess</td>
-        <td>50s</td>
-        <td><button type="button" class="btn btn-info index-table-btn">查看</button></td>
-    </tr>
-
+    <% for(var i = 0; i < data.length; i++){ %>
+        <tr>
+            <td><%=data[i].user%></td>
+            <td><%=data[i].name + ' #' + data[i].number%></td>
+            <td><%=data[i].date%></td>
+            <td><%=data[i].status%></td>
+            <td><%=data[i].finishTime%>s</td>
+            <td><button type="button" class="btn btn-info index-table-btn" data-info="<%=data[i].name + '&' + data[i].number%>">查看</button></td>
+        </tr>
+    <% } %>
     </tbody>
 </table>
