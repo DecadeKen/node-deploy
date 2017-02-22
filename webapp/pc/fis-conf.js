@@ -78,5 +78,35 @@ fis.media('dev')
     });
 
 
+fis.media('dist')
+    .match('*', {
+        useHash: false,
+        // optimizer: null
+    })
+    .match(/\/(.+)\.tpl$/, { // js 模版一律用 .tpl 作为后缀
+        isMod: true,
+        rExt: 'js',
+        id: '$1.tpl',
+        url: '$0.tpl',
+        moduleId: '$1.tpl',
+        release: '$0.tpl', // 发布的后的文件名，避免和同目录下的 js 冲突
+        parser: fis.plugin('imweb-tplv2')
+    })
+    .match('::package', {
+        postpackager: fis.plugin('loader', {
+            allInOne: false,
+            processor: {
+                '.html': 'html'
+            },
+            useInlineMap: false,
+            resourceType: 'mod'
+        })
+    })
+    .match('*', {
+        deploy: fis.plugin('local-deliver', {
+            to: path.resolve(__dirname, '../pc-dev')
+        })
+    });
+
 // extends GLOBAL config
 fis.media('production');
