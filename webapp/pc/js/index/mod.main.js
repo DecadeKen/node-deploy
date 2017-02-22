@@ -14,6 +14,8 @@ var DB = {
 };
 var buildOpt= {};
 
+var buildLock = false;
+
 
 require('/common/base/js/date.js');
 
@@ -38,6 +40,10 @@ function bindEvent() {
 
 function startBuild(err, callback) {
     if (err) return;
+    if (buildLock) {
+        alert('正在构建上传，请稍后再试')
+    }
+    buildLock = true;
     $.ajax({
         url: DB.build.url,
         type: DB.build.type,
@@ -45,6 +51,7 @@ function startBuild(err, callback) {
         data: buildOpt,
         success: function(data) {
             callback && callback(data);
+            buildLock = false;
         }
     });
 }
