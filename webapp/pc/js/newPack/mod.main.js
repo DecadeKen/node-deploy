@@ -6,7 +6,7 @@ var lock = false;
 var DB = {
 
     newPackInfo: {
-        url: '/index/newPackInfo.htm',
+        url: '/newPack/newPackInfo.htm',
         type: 'GET'
     }
 };

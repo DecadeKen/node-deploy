@@ -7,7 +7,7 @@ var path = require('path');
 
 app.use(express.static(path.resolve(__dirname, './webapp/pc-dev/')));
 
-require('./lib/router.js')(app, {
+require('./lib/service/router.js')(app, {
 	pageStatic: __dirname,//页面资源文件夹
 	resourceStatic: __dirname//静态资源文件夹
 });
