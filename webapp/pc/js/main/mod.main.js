@@ -32,11 +32,11 @@ function initMod() {
                 mod.init({ cont: $cont.find('.js-deploy-main') });
             });
             break;
-        // case 'systemConfig':
-        //     require.async('/js/systemConfig/mod.main.js', function(mod) {
-        //         mod.init({ cont: $cont.find('.js-deploy-main') });
-        //     });
-        //     break;
+        case 'log':
+            require.async('/js/log/mod.main.js', function(mod) {
+                mod.init({ cont: $cont.find('.js-deploy-main') });
+            });
+            break;
         case 'packList':
             require.async('/js/packList/mod.main.js', function(mod) {
                 mod.init({ cont: $cont.find('.js-deploy-main') });

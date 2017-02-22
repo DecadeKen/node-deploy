@@ -3,8 +3,8 @@
     <li data-tab="index">
         <a href="#tab=index" >首页</a>
     </li>
-    <li data-tab="systemConfig">
-        <a href="#tab=systemConfig" >系统配置</a>
+    <li data-tab="log">
+        <a href="#tab=log" >日志log</a>
     </li>
     <li data-tab="packList">
         <a href="#tab=packList" >打包列表</a>
