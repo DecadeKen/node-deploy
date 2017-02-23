@@ -1,5 +1,6 @@
 var $cont,
-	tpl_packList = require('./tpl/packList.tpl');
+	tpl_packList = require('./tpl/packList.tpl'),
+	packList;
 
 var lock = false;
 
@@ -13,7 +14,8 @@ function renderHtml(){
 			pageSize: 10
 		},
 		success: function(data){
-			$cont.find('.js-main-packList').show().html(tpl_packList(data.data));
+			packList = data.data;
+			$cont.find('.js-main-packList').show().html(tpl_packList(packList));
 		},
 		error: function(){
 			alert("没有构建历史");
@@ -26,7 +28,16 @@ function renderHtml(){
 function bindEvent(){
 	// if (lock) return;
 	// lock = !lock;
-	
+	$cont.on('click', '.js-packlist-view', function(){
+		var index = $(this).attr('data-index');
+		$cont.find('.pack-log-content').html(packList.data[index].log);
+		$cont.find('.index-table').hide();
+		$cont.find('.pack-log').show();
+
+	}).on('click', '.js-packlist-back', function(){
+		$cont.find('.index-table').show();
+		$cont.find('.pack-log').hide();
+	});
 
 }
 
