@@ -1,4 +1,4 @@
-<table class="table table-bordered index-table ">
+<table class="table table-bordered index-table">
     <thead>
         <tr>
             <th>用户</th>
@@ -17,8 +17,12 @@
             <td><%=data[i].date%></td>
             <td><%=data[i].status%></td>
             <td><%=data[i].finishTime%>s</td>
-            <td><button type="button" class="btn btn-info index-table-btn" data-info="<%=data[i].name + '&' + data[i].number%>">查看</button></td>
+            <td><button type="button" class="btn btn-info index-table-btn js-packlist-view" data-index="<%=i%>">查看</button></td>
         </tr>
     <% } %>
     </tbody>
 </table>
+<div class="pack-log" style="display: none;">
+    <div class="pack-log-content"></div>
+    <button type="button" class="btn btn-info index-center-btn js-packlist-back">返回</button>
+</div>
