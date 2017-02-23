@@ -14,10 +14,15 @@ var DB = {
     rollBack: {
         url: '/index/rollBack.htm',
         type: 'GET'
+    },
+    deleteData: {
+        url: '/index/delete.htm',
+        type: 'GET'
     }
 };
 var buildOpt = {},
-    rollBackOpt = {};
+    rollBackOpt = {},
+    deleteOpt = {};
 
 var buildLock = false;
 
@@ -35,20 +40,41 @@ function bindEvent() {
     $cont.find('.js-btn-build').on('click', function() {
 
         username = Cache.get('userinfo').name;
-    	buildOpt.id = $(this).parent().attr('data-id');
-    	buildOpt.number = $(this).parent().attr('data-number');
+        buildOpt.id = $(this).parent().attr('data-id');
+        buildOpt.number = $(this).parent().attr('data-number');
         buildOpt.logName = [username, buildOpt.id, +new Date()].join('_');
 
         startBuild(null, function(data) {
             location.href = '/#tab=log&logname=' + buildOpt.logName;
         });
-    }); 
+    });
 
     $cont.find('.js-btn-rollback').on('click', function() {
         rollBackOpt.id = $(this).parent().attr('data-id');
-        rollBack(null, function(){
+        rollBack(null, function() {
 
         });
+    });
+
+    $cont.find('.js-btn-delete').on('click', function() {
+        deleteOpt.id = $(this).parent().attr('data-id');
+        deleteData(null, function() {
+
+        });
+    });
+}
+
+function deleteData(err, callback) {
+    if (err) return;
+
+    $.ajax({
+        url: DB.deleteData.url,
+        type: DB.deleteData.type,
+        dataType: 'json',
+        data: deleteOpt,
+        success: function(data) {
+            callback && callback(data);
+        }
     });
 }
 

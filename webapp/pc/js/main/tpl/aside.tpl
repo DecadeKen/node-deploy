@@ -3,7 +3,7 @@
     <li data-tab="index">
         <a href="#tab=index" >首页</a>
     </li>
-    <li data-tab="log">
+    <li data-tab="log" style="display: none">
         <a href="#tab=log" >日志log</a>
     </li>
     <li data-tab="packList">
