@@ -51,14 +51,21 @@ function bindEvent() {
 
     $cont.find('.js-btn-rollback').on('click', function() {
         rollBackOpt.id = $(this).parent().attr('data-id');
-        rollBack(null, function() {
+        rollBack(null, function(data) {
+            if (data.code == 0) {
+                alert(data.data);
+            }
 
         });
     });
 
     $cont.find('.js-btn-delete').on('click', function() {
         deleteOpt.id = $(this).parent().attr('data-id');
-        deleteData(null, function() {
+        deleteData(null, function(data) {
+            if (data.code == 0) {
+                alert(data.data);
+                window.location.reload();
+            }
 
         });
     });
