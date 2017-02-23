@@ -37,6 +37,11 @@ function initMod() {
                 mod.init({ cont: $cont.find('.js-deploy-main') });
             });
             break;
+        case 'logview':
+            require.async('/js/logview/mod.main.js', function(mod) {
+                mod.init({ cont: $cont.find('.js-deploy-main') });
+            });
+            break;
         case 'packList':
             require.async('/js/packList/mod.main.js', function(mod) {
                 mod.init({ cont: $cont.find('.js-deploy-main') });
