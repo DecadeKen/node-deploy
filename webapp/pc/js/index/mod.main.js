@@ -8,11 +8,16 @@ var DB = {
         type: 'GET'
     },
     build: {
-    	url: '/index/build.htm',
-    	type: 'GET'
+        url: '/index/build.htm',
+        type: 'GET'
+    },
+    rollBack: {
+        url: '/index/rollBack.htm',
+        type: 'GET'
     }
 };
-var buildOpt= {};
+var buildOpt = {},
+    rollBackOpt = {};
 
 var buildLock = false;
 
@@ -29,13 +34,37 @@ function bindEvent() {
     // lock = !lock;
 
     $cont.find('.js-btn-build').on('click', function() {
+
+        username = Cache.get('userinfo').name;
     	buildOpt.id = $(this).parent().attr('data-id');
     	buildOpt.number = $(this).parent().attr('data-number');
+        buildOpt.logName = [username, buildOpt.id, +new Date()].join('_');
+
         startBuild(null, function(data) {
-            // console.log(data);
+            location.href = '/#tab=log&logname=' + buildOpt.logName;
+        });
+    }); 
+
+    $cont.find('.js-btn-rollback').on('click', function() {
+        rollBackOpt.id = $(this).parent().attr('data-id');
+        rollBack(null, function(){
+
         });
     });
+}
 
+function rollBack(err, callback) {
+    if (err) return;
+
+    $.ajax({
+        url: DB.rollBack.url,
+        type: DB.rollBack.type,
+        dataType: 'json',
+        data: rollBackOpt,
+        success: function(data) {
+            callback && callback(data);
+        }
+    });
 }
 
 function startBuild(err, callback) {
@@ -75,7 +104,7 @@ function init(opt) {
         bindEvent();
     });
 
-    
+
 }
 
 return {

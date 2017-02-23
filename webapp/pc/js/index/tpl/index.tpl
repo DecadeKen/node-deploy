@@ -18,7 +18,7 @@
             <td class="index-table-operate" data-id=<%=data[i].id%> data-number=<%=data[i].number%> >
                 <button type="button" class="btn btn-success index-table-btn js-btn-build">构建</button>
                 <button type="button" class="btn btn-info index-table-btn">配置</button>
-                <button type="button" class="btn btn-warning index-table-btn">回退</button>
+                <button type="button" class="btn btn-warning index-table-btn js-btn-rollback">回退</button>
             </td>
         </tr>
     <%}%>
