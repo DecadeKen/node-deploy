@@ -22,7 +22,6 @@ var buildOpt = {},
 var buildLock = false;
 
 
-require('/common/base/js/date.js');
 
 function renderHtml(data) {
     $cont.find('.js-main-content').hide();

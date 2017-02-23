@@ -12,7 +12,6 @@
 
 <body>
     <div class="js-deploy-container"></div>
-
     <script src="./common/dep/mod.js"></script>
     <script src="./common/common.js"></script>
     <script src="./common/dep/jquery-1.11.2.min.js"></script>
@@ -25,13 +24,13 @@
             userName: 'ken',
             password: '123456'
         },
-        success: function(data){
-            if(!data.code){
+        success: function(data) {
+            if (!data.code) {
                 console.log('登录成功');
                 window.Cache.set('userinfo', data.data);
-            }else{
+            } else {
                 console.log('登录失败');
-                
+
             }
         }
     });
@@ -40,3 +39,4 @@
 </body>
 
 </html>
+

@@ -14,7 +14,7 @@
         <tr>
             <td><%=data[i].user%></td>
             <td><%=data[i].name + ' #' + data[i].number%></td>
-            <td><%=data[i].date%></td>
+            <td><%=new Date(data[i].date).Format("yyyy-MM-dd hh:mm") %></td>
             <td><%=data[i].status%></td>
             <td><%=data[i].finishTime%>s</td>
             <td><button type="button" class="btn btn-info index-table-btn js-packlist-view" data-index="<%=i%>">查看</button></td>
