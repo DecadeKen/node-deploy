@@ -34,12 +34,16 @@ function bindEvent() {
     // lock = !lock;
 
     $cont.find('.js-btn-build').on('click', function() {
-        buildOpt.id = $(this).parent().attr('data-id');
-        buildOpt.number = $(this).parent().attr('data-number');
+
+        username = Cache.get('userinfo').name;
+    	buildOpt.id = $(this).parent().attr('data-id');
+    	buildOpt.number = $(this).parent().attr('data-number');
+        buildOpt.logName = [username, buildOpt.id, +new Date()].join('_');
+
         startBuild(null, function(data) {
-            // console.log(data);
+            location.href = '/#tab=log&logname=' + buildOpt.logName;
         });
-    });
+    }); 
 
     $cont.find('.js-btn-rollback').on('click', function() {
         rollBackOpt.id = $(this).parent().attr('data-id');
