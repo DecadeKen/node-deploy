@@ -17,7 +17,7 @@
             <td><%=new Date(data[i].date).Format("yyyy-MM-dd hh:mm") %></td>
             <td><%=data[i].status%></td>
             <td><%=data[i].finishTime%>s</td>
-            <td><button type="button" class="btn btn-info index-table-btn js-packlist-view" data-index="<%=i%>">查看</button></td>
+            <td><a type="button" href="/#tab=logview&pro_id=<%=data[i]['id']%>&num=<%=data[i]['number']%>"  class="btn btn-info index-table-btn js-packlist-view" data-index="<%=i%>">查看</a
         </tr>
     <% } %>
     </tbody>
