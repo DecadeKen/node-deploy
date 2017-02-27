@@ -1,6 +1,7 @@
 var $cont,
 	tpl_log = require('./tpl/log.tpl'),
-    logname;
+    logname,
+    ws;
 
 
 
@@ -11,6 +12,7 @@ function renderHtml(){
 
 function getLog() {
     var ws = new WebSocket('ws://'+ location.host+'/log?logname=' + logname),
+
         $log = $('.js-log-content');
 
     ws.onmessage = function(data) {
@@ -20,7 +22,9 @@ function getLog() {
 
 function bindEvent(){
 
-
+    window.onbeforeunload = function() {
+        ws.send('close');
+    };
 }
 
 
