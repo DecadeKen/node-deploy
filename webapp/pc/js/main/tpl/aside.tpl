@@ -14,7 +14,7 @@
     </li>
 </ul>
 
-<div class="aside-status">
+<!-- <div class="aside-status">
     <div class="page-header">
         执行状态：
     </div>
@@ -31,4 +31,4 @@
         70%
       </div>
     </div>
-</div>
+</div> -->
