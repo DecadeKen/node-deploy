@@ -5,9 +5,9 @@ var config = {
         "username": 'root',
         "password": 'nongfadai',
         "uploadOpt": {
-            "localDir": '/root/node_deploy/',
-            "remoteDir": '/root/test/',
-            "backupDir": '/root/node_deploy/backup'
+            "localDir": '／home/ifweb/node_deploy/',
+            "remoteDir": '／home/ifweb/test/',
+            "backupDir": '／home/ifweb/node_deploy/backup'
         }
     }],
     "svnUrl": [
