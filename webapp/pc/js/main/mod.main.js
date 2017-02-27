@@ -18,7 +18,7 @@ function bindEvent() {
 }
 
 function initHash() {
-    hash = $.bom.getHash('tab') || '';
+    hash = $.bom.getHash('tab') || 'index';
     $cont.find('.js-deploy-aside').find('[data-tab]').removeClass('active');
     $cont.find('.js-deploy-aside').find('[data-tab=' + hash + ' ]').addClass('active');
 

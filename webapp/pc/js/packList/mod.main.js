@@ -22,17 +22,20 @@ function renderHtml(){
 			console.log('获取构建历史列表错误');
 		}
 	});
-	
+
 }
+
+
+
 
 function bindEvent(){
 	// if (lock) return;
 	// lock = !lock;
 	$cont.on('click', '.js-packlist-view', function(){
 		// var index = $(this).attr('data-index');
-		$cont.find('.pack-log-content').html(packList.data[index].log);
-		$cont.find('.index-table').hide();
-		$cont.find('.pack-log').show();
+		// $cont.find('.pack-log-content').html(packList.data[index].log);
+		// $cont.find('.index-table').hide();
+		// $cont.find('.pack-log').show();
 
 		// location.href = '/#tab=logview&id=' + 
 
