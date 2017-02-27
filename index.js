@@ -1,26 +1,38 @@
-/*
- * deploy 模块入口
- */
-var express = require('express');
-var app = express();
-var path = require('path');
-var childProcess = require('child_process');
-require('express-ws')(app);
+var
+    childProcess = require('child_process'),
 
-// var serverName = "./lib/router.js",
-// mainServer = childProcess.fork(serverName)(app);
-app.use(express.static(path.resolve(__dirname, './webapp/pc-dev/')));
+    serverName="./lib/app.js",
 
+    mainServer = childProcess.fork(serverName);
 
-
-
-
-
-require('./lib/service/router.js')(app);
-
-
-app.listen(5000, function() {
-    console.log('listen 5000');
+mainServer.on('uncaughtException', function(e) {
+    console.log("deploy on error");
+　　 console.log(e);
+    restartServer();
 });
 
-// module.exports = deploy;
+process.on('exit', function () {
+　　console.log('deploy exit!');
+});
+
+process.on('uncaughtException', function(e) {
+    console.log("deploy on error");
+    console.log(e);
+    restartServer();
+});
+
+function restartServer(){
+    console.log("deploy restart...");
+    killServer();
+
+    mainServer = childProcess.fork(serverName, process.argv.slice(2));
+    console.log("new server is built!\n");
+}
+
+function killServer(){
+     try{
+         process.kill(mainServer.pid);
+     }catch(ex){
+         console.log("deploy: ",ex);
+     }
+}
