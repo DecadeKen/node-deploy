@@ -13,6 +13,7 @@ mainServer.on('uncaughtException', function(e) {
 
 process.on('exit', function () {
 　　console.log('deploy exit!');
+	restartServer();
 });
 
 process.on('uncaughtException', function(e) {

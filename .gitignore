@@ -2,3 +2,4 @@ node_modules/
 workspace/
 webapp/pc-dev/
 webapp/pc-dist/
+.DS_Store

@@ -51,10 +51,14 @@ function bindEvent() {
 
     $cont.find('.js-btn-rollback').on('click', function() {
         rollBackOpt.id = $(this).parent().attr('data-id');
+        rollBackOpt.number = $(this).parent().attr('data-number');
+        username = Cache.get('userinfo').name;
+        rollBackOpt.logName = [username, buildOpt.id, +new Date()].join('_');
         rollBack(null, function(data) {
-            if (data.code == 0) {
-                alert(data.data);
-            }
+            location.href = '/#tab=log&logname=' + rollBackOpt.logName;
+            // if (data.code == 0) {
+            //     alert(data.data);
+            // }
 
         });
     });
