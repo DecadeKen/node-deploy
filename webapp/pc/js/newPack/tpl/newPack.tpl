@@ -3,14 +3,23 @@
 	<input name="projectName" class="form-control" type="text" placeholder="请输入项目名称">
 </div>
 
-<div class="newPack-input-group">
+<!-- <div class="newPack-input-group">
 	<label for="basic-url">svn URL</label>
 	<select name="svnUrl" class="form-control">
 		<%for(var i=0 ; i< svnUrl.length; i++) {%>
 			<option value=<%=i%>> <%=svnUrl[i]%></option>
 		<%}%>
 	</select>
+</div> -->
+
+<div class="newPack-input-group">
+	<label for="basic-url">svn URL</label>
+	<div class="input-group">
+		<span class="input-group-addon" id="basic-addon3">https://nfd-server02/svn/</span>
+		<input name="svnUrl" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="请输入项目地址，如：p2p/preRelease/">
+	</div>
 </div>
+
 
 
 

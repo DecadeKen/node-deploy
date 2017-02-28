@@ -11,7 +11,7 @@ function renderHtml(data){
 
 
 function getLog(callback) {
-    $.ajax({
+    $.Ajax({
         url: '/logview/getlog.htm',
         type: 'get',
         data:{
