@@ -6,7 +6,7 @@ var lock = false;
 
 function renderHtml(){
 	$cont.find('.js-main-content').hide();
-	$.ajax({
+	$.Ajax({
 		url: '/packList/packList.htm',
 		type: 'get',
 		data:{

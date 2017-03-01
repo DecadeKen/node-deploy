@@ -40,7 +40,7 @@ function bindEvent() {
 
 function SendNewPackInfoData(err, callback) {
     if (err) return;
-    $.ajax({
+    $.Ajax({
         url: DB.newPackInfo.url,
         type: DB.newPackInfo.type,
         dataType: 'json',
@@ -55,7 +55,7 @@ function checkSaveBtn() {
     var isSave = true;
     newPackOpt = {
         name: $cont.find('[name=projectName]').val(),
-        svnUrl: config.svnUrl[$cont.find('[name=svnUrl]').val()],
+        svnUrl: 'https://nfd-server02/svn/' + $cont.find('[name=svnUrl]').val(),
         fisMedia: $cont.find('[name=fisMedia]').val(),
         serverId: $cont.find('[name=serverId]').val()
     };

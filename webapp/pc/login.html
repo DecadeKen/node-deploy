@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>前端独立打包登陆页</title>
+    <link href="./common/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/login.scss" rel="stylesheet">
+</head>
+
+<body>
+    <div class="deploy-login">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                    <input type="text" name="user" class="form-control" id="inputEmail3" placeholder="请输入用户名">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                    <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default js-btn-login">登陆</button>
+                    <button type="button" class="btn btn-default js-btn-register">注册</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="./common/dep/mod.js"></script>
+    <script src="./common/common.js"></script>
+    <script src="./common/dep/jquery-1.11.2.min.js"></script>
+    <script src="./common/dep/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    // $.ajax({
+    //     url: '/login.htm',
+    //     type: 'post',
+    //     data: {
+    //         userName: 'ken',
+    //         password: '123456'
+    //     },
+    //     success: function(data) {
+    //         if (!data.code) {
+    //             console.log('登录成功');
+    //             window.Cache.set('userinfo', data.data);
+    //         } else {
+    //             console.log('登录失败');
+
+    //         }
+    //     }
+    // });
+    require('./js/login/mod.main.js').init();
+    </script>
+</body>
+
+</html>

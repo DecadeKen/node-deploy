@@ -17,23 +17,23 @@
     <script src="./common/dep/jquery-1.11.2.min.js"></script>
     <script src="./common/dep/bootstrap.min.js"></script>
     <script type="text/javascript">
-    $.ajax({
-        url: '/login.htm',
-        type: 'post',
-        data: {
-            userName: 'ken',
-            password: '123456'
-        },
-        success: function(data) {
-            if (!data.code) {
-                console.log('登录成功');
-                window.Cache.set('userinfo', data.data);
-            } else {
-                console.log('登录失败');
+    // $.ajax({
+    //     url: '/login.htm',
+    //     type: 'post',
+    //     data: {
+    //         userName: 'ken',
+    //         password: '123456'
+    //     },
+    //     success: function(data) {
+    //         if (!data.code) {
+    //             console.log('登录成功');
+    //             window.Cache.set('userinfo', data.data);
+    //         } else {
+    //             console.log('登录失败');
 
-            }
-        }
-    });
+    //         }
+    //     }
+    // });
     require('./js/main/mod.main.js').init();
     </script>
 </body>
