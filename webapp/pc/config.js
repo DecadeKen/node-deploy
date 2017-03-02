@@ -3,18 +3,12 @@ var config = {
         "host": '10.1.60.20',
         "port": 22,
         "username": 'root',
-        "password": 'nongfadai',
-        "uploadOpt": {
-            "localDir": '/Users/node_deploy/',
-            "remoteDir": '/root/test/',
-            "backupDir": '/Users/node_deploy/backup'
-        }
+        "password": 'nongfadai'
     }, {
         "host": '10.1.60.23',
         "port": 22,
         "username": 'root',
-        "password": 'nongfadai',
-        "backupDir": '/Users/node_deploy/backup'
+        "password": 'nongfadai'
 
     }],
     "uploadArr": [{
@@ -35,10 +29,6 @@ var config = {
         //     "remoteDir": '/home/webapps/p2p_h5/h5user/current/WEB-INF/pages',
         // "backupDir": '/Users/node_deploy/backup/p2p_h5/h5user/'
         // }
-    ],
-    "svnUrl": [
-        'https://nfd-server02/svn/p2p/preRelease/',
-        'https://nfd-server02/svn/activity/preRelease/'
     ],
     "staticServer": {
         "host": '192.168.1.7',

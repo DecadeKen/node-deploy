@@ -2,6 +2,7 @@ var $cont,
     tpl_index = require('./tpl/index.tpl');
 
 var lock = false;
+var config = require('/config');
 var DB = {
     ProjectInfo: {
         url: 'index/ProjectInfo.htm',
@@ -30,7 +31,7 @@ var buildLock = false;
 
 function renderHtml(data) {
     $cont.find('.js-main-content').hide();
-    $cont.find('.js-main-index').show().html(tpl_index(data));
+    $cont.find('.js-main-index').show().html(tpl_index(data,config));
 }
 
 function bindEvent() {

@@ -1,4 +1,4 @@
-<div style="width: 1300px; margin: 0 auto;">
+<div style="width: 1400px; margin: 0 auto;">
     <div class="container-fluid section-main">
         <div class="row">
             <div class="col-md-2 aside">
