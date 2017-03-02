@@ -28,7 +28,6 @@
 	<select name="fisMedia" class="form-control">
 		<option value="dist">fis3 release dist</option>
 		<option value="test">fis3 release test</option>
-		<option value="dev">fis3 release dev</option>
 	</select>
 </div>
 
