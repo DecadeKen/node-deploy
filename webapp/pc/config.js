@@ -5,7 +5,37 @@ var config = {
         "username": 'root',
         "password": 'nongfadai'
     }, {
+        "host": '192.168.1.21',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
+    }, {
+        "host": '192.168.1.5',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
+    }, {
+        "host": '192.168.1.7',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
+    }, {
         "host": '10.1.60.23',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
+    }, {
+        "host": '10.1.60.25',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
+    }, {
+        "host": '10.1.60.52',
         "port": 22,
         "username": 'root',
         "password": 'nongfadai'
