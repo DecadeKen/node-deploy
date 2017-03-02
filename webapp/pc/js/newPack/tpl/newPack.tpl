@@ -3,14 +3,6 @@
 	<input name="projectName" class="form-control" type="text" placeholder="请输入项目名称">
 </div>
 
-<!-- <div class="newPack-input-group">
-	<label for="basic-url">svn URL</label>
-	<select name="svnUrl" class="form-control">
-		<%for(var i=0 ; i< svnUrl.length; i++) {%>
-			<option value=<%=i%>> <%=svnUrl[i]%></option>
-		<%}%>
-	</select>
-</div> -->
 
 <div class="newPack-input-group">
 	<label for="basic-url">svn URL</label>
