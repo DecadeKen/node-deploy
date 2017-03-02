@@ -14,28 +14,28 @@ var config = {
         "port": 22,
         "username": 'root',
         "password": 'nongfadai',
-        "uploadArr": [{
-            "localPcFront": '/Users/node_deploy/nfd/front/src/main/webapp/WEB-INF/pages',
-            "remotePcFront": '/home/webapps/p2p_pc/front/current/WEB-INF/pages',
-
-        }, {
-            "localPcUser": '/Users/node_deploy/nfd/User/src/main/webapp/WEB-INF/pages',
-            "remotePcUser": '/home/webapps/p2p_pc/user/current/WEB-INF/pages',
-
-        }, {
-            "localH5Front": '/Users/node_deploy/h5nfd/front/src/main/webapp/WEB-INF/pages',
-            "remoteH5Front": '/home/webapps/p2p_h5/front/current/WEB-INF/pages',
-
-        }
-        // , {
-        //     "localH5User": '/Users/node_deploy/h5nfd/User/src/main/webapp/WEB-INF/pages',
-        //     "remoteH5User": '/home/webapps/p2p_h5/user/current/WEB-INF/pages',
-
-        // }
-        ],
         "backupDir": '/Users/node_deploy/backup'
 
     }],
+    "uploadArr": [{
+            "localDir": '/Users/node_deploy/nfd/front/src/main/webapp/WEB-INF/pages',
+            "remoteDir": '/home/webapps/p2p_pc/front/current/WEB-INF/pages',
+            "backupDir": '/Users/node_deploy/backup/p2p_pc/front/'
+        }, {
+            "localDir": '/Users/node_deploy/nfd/user/src/main/webapp/WEB-INF/pages',
+            "remoteDir": '/home/webapps/p2p_pc/user/current/WEB-INF/pages',
+            "backupDir": '/Users/node_deploy/backup/p2p_pc/user/'
+        }, {
+            "localDir": '/Users/node_deploy/h5nfd/front/src/main/webapp/WEB-INF/pages',
+            "remoteDir": '/home/webapps/p2p_h5/h5front/current/WEB-INF/pages',
+            "backupDir": '/Users/node_deploy/backup/p2p_h5/h5front/'
+        }
+        // , {
+        //     "localDir": '/Users/node_deploy/h5nfd/user/src/main/webapp/WEB-INF/pages',
+        //     "remoteDir": '/home/webapps/p2p_h5/h5user/current/WEB-INF/pages',
+        // "backupDir": '/Users/node_deploy/backup/p2p_h5/h5user/'
+        // }
+    ],
     "svnUrl": [
         'https://nfd-server02/svn/p2p/preRelease/',
         'https://nfd-server02/svn/activity/preRelease/'
