@@ -40,6 +40,18 @@ var config = {
         "username": 'root',
         "password": 'nongfadai'
 
+    }, {
+        "host": '10.1.60.61',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
+    }, {
+        "host": '10.1.60.62',
+        "port": 22,
+        "username": 'root',
+        "password": 'nongfadai'
+
     }],
     "uploadArr": [{
             "localDir": '/Users/node_deploy/nfd/front/src/main/webapp/WEB-INF/pages',
