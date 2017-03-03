@@ -5,7 +5,7 @@
 
 
 <div class="newPack-input-group">
-	<label for="basic-url">svn URL</label>
+	<label for="basic-url">svn URL（只需填到版本根目录）</label>
 	<div class="input-group">
 		<span class="input-group-addon" id="basic-addon3">https://nfd-server02/svn/</span>
 		<input name="svnUrl" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="请输入项目地址，如：p2p/preRelease/">
